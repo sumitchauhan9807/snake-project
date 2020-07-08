@@ -111,7 +111,7 @@ class Snake{
 
     setControls(){
         var _this = this;
-        $(document).on("keyup",function(e){
+        $(document).on("keydown",function(e){
             console.log(e.code,'keyup')
             if(e.code == 'ArrowDown'){
                  if(_this.direction != -50){
