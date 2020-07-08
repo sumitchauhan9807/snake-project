@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h5>Saanp</h5>
+  <div class="snake"></div>
+  <br>
+  <div class=" row connectedClients"></div>
+</div>
+<audio controls autoplay id="snakehit" style="display: none;">
+  <source src="assets/media/snakehit.mp3" type="audio/mp3">
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<audio controls autoplay id="snakedead" style="display: none;">
+  <source src="assets/media/snakedead.mp3" type="audio/mp3">
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+</body>
+
+
+
+<link rel="stylesheet" href="assets/style.css">
+
+<script src="assets/socket-client.js"></script>
+<script src="assets/script.js"></script>
+<script>
+$(document).ready(function(){
+
+
+
+   window.mousePos;
+//    const snakeBoard =  new SnakeBoard($(".snake"));
+   
+//     const snake1 = new Snake(
+//       {snake:[200,202,203,204,205],color:'red'},
+//       $(".snake"),
+//       snakeBoard.boardData
+//     );
+    // const snake2 = new Snake(
+    //   {snake:[300,302,303,304,305],color:'blue'},
+    //   $(".snake"),
+    //   snakeBoard.boardData
+    // );
+    // const snake3 = new Snake(
+    //   {snake:[500,502,503,504,505],color:'green'},
+    //   $(".snake"),
+    //   snakeBoard.boardData
+    // );
+   
+  
+})
+
+
+</script>
+</html>

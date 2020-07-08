@@ -1,0 +1,33 @@
+.snake{
+    width:100%;
+    height:600px;
+    background: black;
+    margin: 0px;
+    font-size: 0px;
+    background-image: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg");
+}
+
+.box{
+    width: 2%;
+    border: solid 1px white;
+    height: 18px;
+    display: inline-block;
+    margin: 0px;
+    font-size: 0px;
+}
+.snake_body{
+    background: red;
+    border: solid 1px wheat;
+}
+
+.mouse{
+    background: pink;
+}
+
+.card{
+    margin:10px;
+}
+
+.foreign_snake{
+    background: green;
+}
