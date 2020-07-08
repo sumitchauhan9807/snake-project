@@ -18,7 +18,7 @@ class Socket{
         socket.on('connect', ()=>{
             this.clientId = socket.id;
             console.log('connected to server',socket.id)
-        });
+        }); 
         this.setSocketHandlers();
         this.setDOMHandlers()
     }
