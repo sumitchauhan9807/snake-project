@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3000');
+const socket = io('http://13.58.120.14:3000');
 const eventEmitter = new EventEmitter();
 var requestClientName = '';
 var person='';
