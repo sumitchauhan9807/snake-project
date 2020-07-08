@@ -9,6 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.2.8/EventEmitter.js"></script>
 </head>
 <body>
 
@@ -17,6 +18,20 @@
   <div class="snake"></div>
   <br>
   <div class=" row connectedClients"></div>
+  <div clas="row scoreDetails">
+    <div class="col-md-4">
+    <ul class="list-group">
+      <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
+        Inbox
+        <span class="badge badge-primary badge-pill">12</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Ads
+        <span class="badge badge-primary badge-pill">50</span>
+      </li> -->
+    </ul>
+  </div>
+  </div>
 </div>
 <audio controls autoplay id="snakehit" style="display: none;">
   <source src="assets/media/snakehit.mp3" type="audio/mp3">
@@ -38,6 +53,14 @@
 <script src="assets/script.js"></script>
 <script>
 $(document).ready(function(){
+  
+
+
+  eventEmitter.on('sumit',()=>{
+    alert('sumit')
+  })
+
+  // eventEmitter.emit('sumit')
 
 
 

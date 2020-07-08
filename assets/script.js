@@ -11,13 +11,14 @@ class Snake{
         setInterval(() => {
             this.moveSnake()    
            // console.log(window.game,"game data")
+           console.log(this.direction)
             socket.emit('gameData',{
                 game:window.game,
                 myId:socket.id,
                 snake:this.snake
             })
         //    console.log(window.mousePos,"mousePos")
-        }, 1000/8);
+        }, 1000/10);
         this.setControls()
     }
     setRulezz(){
@@ -28,6 +29,7 @@ class Snake{
           //  alert('mouse')
           document.getElementById("snakehit").play().then(()=>{
               console.log('palyed')
+              eventEmitter.emit('mouseEaten')
           });
           
              this.snake.push(this.snake[this.snake.length-1] + this.direction)
@@ -104,8 +106,6 @@ class Snake{
     renderSnake(){
         this.snake.forEach((k)=>{
             $(".box:nth-child("+k+")").addClass("snake_body")
-            //.css('background',this.snakeColor)
-            //console.log(this.snake)
         })
     }
 
@@ -114,16 +114,24 @@ class Snake{
         $(document).on("keyup",function(e){
             console.log(e.code,'keyup')
             if(e.code == 'ArrowDown'){
-                _this.direction = _this.boxesOnX
+                 if(_this.direction != -50){
+                    _this.direction = _this.boxesOnX
+                }
             }
             if(e.code == 'ArrowUp'){
-                _this.direction = -_this.boxesOnX
+                if(_this.direction != 50){
+                    _this.direction = -_this.boxesOnX
+                }
             }
             if(e.code == 'ArrowRight'){
-                _this.direction = 1
+                if(_this.direction != -1){
+                    _this.direction = 1
+                }
             }
             if(e.code == 'ArrowLeft'){
-                _this.direction = -1
+                 if(_this.direction != 1){
+                    _this.direction = -1
+                }
             }
         })
     }
@@ -141,7 +149,6 @@ class SnakeBoard{
         this.noOfBoxes = 1650
         this.addBoxes(snake)
         this.calc();
-        this.placeMouse();
     }
 
     addBoxes(snake){
@@ -149,22 +156,7 @@ class SnakeBoard{
             snake.append('<div num='+i+' class="box"></div>')
         }
     }
-    placeMouse(){
-        let mouseBox = Math.floor(Math.random() * this.noOfBoxes);
-            console.log(mouseBox);
-            window.mousePos = mouseBox;
-            $(".box").removeClass('mouse')
-            $(".box:nth-child("+mouseBox+")").addClass("mouse")
-        // setInterval(()=>{
-        //     let mouseBox = Math.floor(Math.random() * this.noOfBoxes);
-        //     console.log(mouseBox);
-        //     window.mousePos = mouseBox;
-        //     $(".box").removeClass('mouse')
-        //     $(".box:nth-child("+mouseBox+")").addClass("mouse")
-        // },10000)  
-    }
-
-    calc(){
+     calc(){
         let boardWidth = $(".snake").width();
         let boxWidth = (2/100) * boardWidth;
         let boxesOnX = boardWidth/boxWidth
