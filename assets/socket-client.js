@@ -1,4 +1,4 @@
-const socket = io('http://54.86.185.216:3000');
+const socket = io('http://3.82.139.22:3000');
 const eventEmitter = new EventEmitter();
 var requestClientName = '';
 var person='';
